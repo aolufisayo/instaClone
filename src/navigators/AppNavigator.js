@@ -7,6 +7,7 @@ import LikesScreen from './../screens/LikesScreen';
 import AccountScreen from './../screens/AccountScreen';
 import GalleryScreen from './../screens/GalleryScreen';
 import TabBarIcon from './components/TabBarIcon';
+import GalleryIcon from './components/GalleryIcon';
 
 
 const HomeStack = createStackNavigator({
@@ -50,10 +51,7 @@ const GalleryStack = createStackNavigator({
 })
 GalleryStack.navigationOptions = {
     tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            name={Platform.OS === "android" ? "md-instagram" : "ios-instagram"}
-            color="black"
-        />
+        <GalleryIcon name="instagram" color="black" />
     )
 }
 

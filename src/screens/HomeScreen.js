@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import styled from 'styled-components';
+import GalleryIcon from '../navigators/components/GalleryIcon'
+import Card from './components/Card';
 
 class HomeScreen extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.text}>Homescreen component</Text>
-            </View>
+            <Container>
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                >
+                    <Card />
+                    <Card />
+                </ScrollView>
+            </Container>
         )
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'yellow'
-    },
-    text: {
-        color: 'red'
-    }
-})
-
+const Container = styled.View`
+flex: 1;
+background-color: #F6F6F6;
+`
 export default HomeScreen;
