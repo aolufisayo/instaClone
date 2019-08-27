@@ -10,75 +10,79 @@ import TabBarIcon from './components/TabBarIcon';
 import GalleryIcon from './components/GalleryIcon';
 
 
+
 const HomeStack = createStackNavigator({
-    Home: HomeScreen
+	Home: HomeScreen
 });
 HomeStack.navigationOptions = {
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            name={Platform.OS === "android" ? "md-home" : "ios-home"}
-            color="black"
-        />
-    )
+	tabBarIcon: ({ focused }) => (
+		<TabBarIcon
+			name={Platform.OS === "android" ? "md-home" : "ios-home"}
+			color="black"
+		/>
+	)
 }
 
 const SearchStack = createStackNavigator({
-    Search: SearchScreen
+	Search: SearchScreen
 })
 SearchStack.navigationOptions = {
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            name={Platform.OS === "android" ? "md-search" : "ios-search"}
-            color="black"
-        />
-    )
+	tabBarIcon: ({ focused }) => (
+		<TabBarIcon
+			name={Platform.OS === "android" ? "md-search" : "ios-search"}
+			color="black"
+		/>
+	)
 }
 
 const LikesStack = createStackNavigator({
-    Likes: LikesScreen
+	Likes: LikesScreen
 })
 LikesStack.navigationOptions = {
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            name={Platform.OS === "android" ? "md-heart" : "ios-heart"}
-            color="black"
-        />
-    )
+	tabBarIcon: ({ focused }) => (
+		<TabBarIcon
+			name={Platform.OS === "android" ? "md-heart" : "ios-heart"}
+			color="black"
+		/>
+	)
 }
 
 const GalleryStack = createStackNavigator({
-    Gallery: GalleryScreen
+	Gallery: GalleryScreen
 })
 GalleryStack.navigationOptions = {
-    tabBarIcon: ({ focused }) => (
-        <GalleryIcon name="instagram" color="black" />
-    )
+	tabBarIcon: ({ focused }) => (
+		<GalleryIcon name="instagram" color="black" />
+	)
 }
 
 const AccountStack = createStackNavigator({
-    Account: AccountScreen
-})
+	Account: AccountScreen
+}, {
+		headerMode: 'none',
+	})
 
 AccountStack.navigationOptions = {
-    tabBarIcon: ({ focused }) => (
-        <TabBarIcon
-            name={Platform.OS === "android" ? "md-person" : "ios-person"}
-            color="black"
-        />
-    )
+	tabBarIcon: ({ focused }) => (
+		<TabBarIcon
+			name={Platform.OS === "android" ? "md-person" : "ios-person"}
+			color="black"
+		/>
+	)
 }
 
 const appNavigator = createBottomTabNavigator({
-    HomeStack,
-    SearchStack,
-    GalleryStack,
-    LikesStack,
-    AccountStack
+	HomeStack,
+	SearchStack,
+	GalleryStack,
+	LikesStack,
+	AccountStack
 }, {
-        tabBarOptions: {
-            showLabel: false
-        }
-    });
+		initialRouteName: 'AccountStack',
+		tabBarOptions: {
+			showLabel: false
+		}
+	});
 
 
 export default createAppContainer(appNavigator);
