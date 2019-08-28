@@ -78,7 +78,7 @@ const appNavigator = createBottomTabNavigator({
 	LikesStack,
 	AccountStack
 }, {
-		initialRouteName: 'AccountStack',
+		initialRouteName: 'LikesStack',
 		tabBarOptions: {
 			showLabel: false
 		}
